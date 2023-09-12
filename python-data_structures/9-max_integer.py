@@ -1,15 +1,12 @@
 #!/usr/bin/python3
 def max_integer(my_list=[]):
-    if my_list is None:
-        return None
     if len(my_list) == 0:
         return None
 
-    highest = float("-inf")
+    max_value = my_list[0]
 
     for num in my_list:
-        if num > highest:
-            highest = num
+        if num > max_value:
+            max_value = num
 
-    print("Max: {:d}".format(highest))
-    return highest
+    return max_value
