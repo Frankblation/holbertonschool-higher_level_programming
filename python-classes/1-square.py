@@ -3,6 +3,6 @@
 
 
 class Square:
-    """this is a disposable palceholder pass"""
+    """this is a defining size and self as instance"""
     def __init__(self, size):
         self.__size = size
