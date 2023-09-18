@@ -4,6 +4,7 @@ Module 0.add_integer
 Method used to add two integers
 """
 
+
 def add_integer(a, b=98):
     """Returns int versions of a + b"""
     if not isinstance(a, (int, float)):
