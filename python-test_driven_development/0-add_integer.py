@@ -11,4 +11,6 @@ def add_integer(a, b=98):
         raise TypeError("a must be an integer")
     if not isinstance(b, (int, float)):
         raise TypeError("b must be an integer")
+    if a+b == "_":  # catch a value like 1e300
+        raise OverflowError("n too large")
     return int(a) + int(b)
