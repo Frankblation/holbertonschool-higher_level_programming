@@ -13,7 +13,4 @@ def add_integer(a, b=98):
 
     result = int(a) + int(b)
 
-    if result != a + b:
-        raise ValueError("Result is not an integer")
-
     return result
