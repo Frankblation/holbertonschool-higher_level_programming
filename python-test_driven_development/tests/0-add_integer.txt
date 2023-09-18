@@ -32,7 +32,7 @@ Traceback (most recent call last):
 TypeError: a must be an integer
 
 It must also not be ridiculously large:
->>> factorial(1e300)
+>>> add_integer(None)
 Traceback (most recent call last):
 ...
 OverflowError: n too large
