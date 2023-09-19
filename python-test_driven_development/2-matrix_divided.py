@@ -20,7 +20,19 @@
 
 
 def matrix_divided(matrix, div):
+    """_summary_
 
+    Args:
+        matrix (_type_): _description_
+        div (_type_): _description_
+
+    Raises:
+        TypeError: _description_
+        ZeroDivisionError: _description_
+
+    Returns:
+        _type_: _description_
+    """
     if(
         not isinstance(matrix, list) or
         not all(isinstance(row, list) for row in matrix) or
