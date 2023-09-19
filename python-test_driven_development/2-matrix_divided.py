@@ -1,37 +1,25 @@
 #!/usr/bin/python3
 """
     Divides all elements of a matrix.
+"""
 
+
+def matrix_divided(matrix, div):
+    """
     Args:
         matrix (list of lists): A matrix containing integers or floats.
         div (int or float): The number by which to divide all elements of the
             matrix.
-
-    Returns:
-        list of lists: A new matrix with all elements divided by div,\
-            rounded to 2 decimal places.
 
     Raises:
         TypeError: If the matrix is not a list of lists of integers or floats,
                    if each row of the matrix does not have the same size,
                    or if div is not a number (integer or float).
         ZeroDivisionError: If div is equal to 0.
-"""
-
-
-def matrix_divided(matrix, div):
-    """_summary_
-
-    Args:
-        matrix (_type_): _description_
-        div (_type_): _description_
-
-    Raises:
-        TypeError: _description_
-        ZeroDivisionError: _description_
 
     Returns:
-        _type_: _description_
+        list of lists: A new matrix with all elements divided by div,\
+            rounded to 2 decimal places.
     """
     if (
         not isinstance(matrix, list) or
