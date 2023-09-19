@@ -33,7 +33,7 @@ def matrix_divided(matrix, div):
     Returns:
         _type_: _description_
     """
-    if(
+    if (
         not isinstance(matrix, list) or
         not all(isinstance(row, list) for row in matrix) or
             not all(isinstance(num, (int, float))
