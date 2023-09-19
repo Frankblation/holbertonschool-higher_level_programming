@@ -24,3 +24,8 @@ class TestMaxInteger(unittest.TestCase):
         """ type_errors """
         self.assertRaises(TypeError, max_integer, ["h", 1])
         self.assertRaises(TypeError, max_integer, [2, [2, 1]])
+
+    def test_positive_middle(self):
+        """Tests for all positive with max in middle"""
+        m = [2, 10, 8, 360, 14, 50]
+        self.assertEqual(max_integer(m), 360)
