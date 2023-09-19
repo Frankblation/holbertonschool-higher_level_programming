@@ -1,8 +1,20 @@
-
 say_my_name = __import__('3-say_my_name').say_my_name
-Regular tests passed
-Test present: first_name= string / last_name= string
-Test present: first_name= string / last_name= empty string
-Test present: first_name= integer / last_name= string => TypeError: first_name must be a string or last_name must be a string
-Test present: missing 1 argument
-Test present: missing 2 arguments
+
+# Test cases for say_my_name function
+>>> say_my_name("John", "Smith")
+My name is John Smith
+>>> say_my_name("Walter", "White")
+My name is Walter White
+>>> say_my_name("Bob")
+My name is Bob
+
+# Edge cases
+>>> say_my_name(12, "White")
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string or last_name must be a string
+
+>>> say_my_name()
+Traceback (most recent call last):
+...
+TypeError: say_my_name() missing 2 required positional arguments: 'first_name' and 'last_name'
