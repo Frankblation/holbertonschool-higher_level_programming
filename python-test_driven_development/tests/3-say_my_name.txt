@@ -23,5 +23,5 @@ TypeError: last_name must be a string
 >>> say_my_name("Frank", "Blation")
 My name is Frank Blation
 
->>> say_my_name("frank")
-My name is frank
+>>> say_my_name("Frank")
+My name is Frank
