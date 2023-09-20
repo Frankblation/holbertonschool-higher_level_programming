@@ -1,3 +1,17 @@
+
+Description:
+Prints a square with the character '#' based on the provided size.
+
+Prototype:
+def print_square(size)
+
+Parameters:
+- size (int): The size (length and width) of the square to be printed.
+
+Exceptions:
+- TypeError: Raised if the 'size' argument is not an integer.
+- ValueError: Raised if the 'size' argument is less than 0.
+
 >>> print_square = __import__('4-print_sqaure').print_square
 
 test 1: Printing a square of size 5
