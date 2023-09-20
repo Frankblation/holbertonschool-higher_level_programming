@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-"""this is a class named Rectangle
-"""
+"""this is a class named Rectangle"""
 
 
 class Rectangle:
+    """Rectangle class defined by  with height"""
 
     def __init__(self, width=0, height=0):
-        """_summary_
+        """initializes a Rectangle instance
 
         Args:
             width (int, optional): Defaults to 0.
@@ -38,6 +38,7 @@ class Rectangle:
 
     @property
     def height(self):
+        """Retrieves the height of a Rectangle instance."""
         return self.__height
 
     @height.setter
