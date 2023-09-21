@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""this is a class named Rectangle"""
+"""this is a class Rectangle"""
 
 
 class Rectangle:
@@ -12,8 +12,8 @@ class Rectangle:
             width (int, optional): Defaults to 0.
             height (int, optional): Defaults to 0.
         """
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
 
     @property
     def width(self):
