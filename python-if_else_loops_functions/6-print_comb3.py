@@ -8,4 +8,4 @@ for tens_digit in range(0,10):
             else:
                 print("{:02d}".format(tens_digit * 10 + ones_digit), end='')
             if tens_digit < 8 or ones_digit < 9:
-                print(", ", end='')
+                print(", ", end='' "\n")
