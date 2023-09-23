@@ -11,4 +11,4 @@ def uppercase(s):
 
         result += uppercase_char
 
-    print(result + "\n")
+        print("{}\n".format(result))
