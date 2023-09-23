@@ -4,7 +4,7 @@ def uppercase(s):
     result = ""
 
     for char in s:
-        if 97 <= ord(char) <= 122:
+        if 97 >= ord(char) <= 122:
             uppercase_char = chr(ord(char) - 32)
         else:
             uppercase_char = char
@@ -12,3 +12,4 @@ def uppercase(s):
         result += uppercase_char
 
         print("{}\n".format(result))
+    print("")
