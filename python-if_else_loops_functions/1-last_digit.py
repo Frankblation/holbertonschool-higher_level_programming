@@ -7,7 +7,7 @@ if number < 0:
     exe = 1
 last_digit = abs(number) % 10
 if exe == 1:
-    number  *= -1
+    number *= -1
     last_digit *= -1
 print(f'Last digit of {number} is {last_digit} and is', end=' ')
 if last_digit > 5:
