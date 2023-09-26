@@ -1,7 +1,7 @@
 Class that inherits from lsit:
 
 Function that prints sorted lsit
-'' print_sorted()''
+'print_sorted()'
 
 >>> MyList = __import__('1-my_list').MyList
 
