@@ -7,21 +7,21 @@ Function that prints sorted lsit
 
 Negative integers:
 
-    my_list_negative = MyList([-4, -2, -6, -1, -8, -3])
+   >>> my_list_negative = MyList([-4, -2, -6, -1, -8, -3])
 
 large list:
 
-    large_list = MyList(range(10**6, 0, -1))
+    >>>large_list = MyList(range(10**6, 0, -1))
 
 Mixed Data Types:
 
-    my_list_mixed = MyList([4, 2, 'hello', 1, 8, 3])
+    >>> my_list_mixed = MyList([4, 2, 'hello', 1, 8, 3])
 
 Duplicate Elements:
 
-    my_list_duplicates = MyList([4, 2, 2, 1, 4, 3])
+    >>> my_list_duplicates = MyList([4, 2, 2, 1, 4, 3])
 
 Single Elements:
 
-    my_list_empty = MyList([])
-    my_list_single = Mylist([42])
+    >>> my_list_empty = MyList([])
+    >>> my_list_single = Mylist([42])
