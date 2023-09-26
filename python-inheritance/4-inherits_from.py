@@ -4,7 +4,7 @@
 """
 
 
-def is_same_class(obj, a_class):
+def inheritis_from(obj, a_class):
     """
     Args:
     obj: The object to check.
