@@ -3,7 +3,11 @@
 
 
 class Mylist(list):
+    """ my sorted list
 
+    Args:
+        list (integers): numbers of list
+    """
     def __init__(self):
         super().__init__()
 
