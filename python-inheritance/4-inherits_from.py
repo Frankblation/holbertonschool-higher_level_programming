@@ -4,7 +4,7 @@
 """
 
 
-def inheritis_from(obj, a_class):
+def inherits_from(obj, a_class):
     """
     Args:
     obj: The object to check.
@@ -13,4 +13,6 @@ def inheritis_from(obj, a_class):
     Returns:
     bool: True if obj is an subclass of a_class, False otherwise.
     """
-    return isinstance(obj, a_class) and not type(obj) is a_class
+    if type(obj) == a_class:
+        return False
+    return issubclass(type(obj), a_class)
