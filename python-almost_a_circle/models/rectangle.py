@@ -15,11 +15,12 @@ class Rectangle(Base):
             y (int, optional): The y-coordinate of the rectangle's position. Defaults to 0.
             id (int, optional): The ID of the rectangle. Defaults to None.
         """
-        super().__init__(id)
+
         self.width = width
         self.height = height
         self.x = x
         self.y = y
+        super().__init__(id)
 
     @property
     def width(self):
@@ -91,4 +92,4 @@ class Rectangle(Base):
     def __str__(self):
         """Return a string representation of the rectangle."""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
-            self.id, self.__x, self.__y, self.__width, self.__height)
+            self.id, self.x, self.y, self.width, self.height)
