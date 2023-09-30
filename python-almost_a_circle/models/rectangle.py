@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """This module defines the Rectangle class."""
+
 from models.base import Base
 
 
@@ -41,7 +42,7 @@ class Rectangle(Base):
         if type(value) is not int:
             raise TypeError("width must be an integer")
         if value <= 0:
-            raise ValueError("width must be > than 0")
+            raise ValueError("width must be > 0")
         self.__width = value
 
     @property
@@ -55,7 +56,7 @@ class Rectangle(Base):
         if type(value) is not int:
             raise TypeError("height must be an integer")
         if value <= 0:
-            raise ValueError("height must be > than 0")
+            raise ValueError("height must be > 0")
         self.__height = value
 
     @property
@@ -69,7 +70,7 @@ class Rectangle(Base):
         if type(value) is not int:
             raise TypeError("x must be an integer")
         if value < 0:
-            raise ValueError("x must be >= to 0")
+            raise ValueError("x must be >= 0")
         self.__x = value
 
     @property
@@ -83,21 +84,5 @@ class Rectangle(Base):
         if type(value) is not int:
             raise TypeError("y must be an integer")
         if value < 0:
-            raise ValueError("y must be >= to 0")
+            raise ValueError("y must be >= 0")
         self.__y = value
-
-    def area(self):
-        """Calculate the area of the rectangle."""
-        return self.__width * self.__height
-
-    def display(self):
-        """Display the rectangle with '#' characters."""
-        for _ in range(self.__y):
-            print()
-        for _ in range(self.__height):
-            print(' ' * self.__x + '#' * self.__width)
-
-    def __str__(self):
-        """Return a string representation of the rectangle."""
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(
-            self.id, self.__x, self.__y, self.__width, self.__height)
