@@ -17,6 +17,12 @@ class Rectangle(Base):
             y (int, optional): The y-coordinate of the
             rectangle's position. Defaults to 0.
             id (int, optional): The ID of the rectangle. Defaults to None.
+
+        Raises:
+            TypeError: If either of width or height is not an int.
+            ValueError: If either of width or height <= 0.
+            TypeError: If either of x or y is not an int.
+            ValueError: If either of x or y < 0.
         """
         super().__init__(id)
         self.width = width
