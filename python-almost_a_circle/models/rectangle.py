@@ -104,10 +104,9 @@ class Rectangle(Base):
             attributes = ['id', 'width', 'height', 'x', 'y']
             for i in range(min(len(args), len(attributes))):
                 setattr(self, attributes[i], args[i])
-        elif kwargs:
+        if kwargs:
             for key, value in kwargs.items():
                 setattr(self, key, value)
-
 
     def __str__(self):
         """Return a string representation of the rectangle."""
