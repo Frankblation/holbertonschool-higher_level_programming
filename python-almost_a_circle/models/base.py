@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-import json
 """Base Class"""
+import json
 
 
 class Base:
@@ -17,16 +17,13 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """
-        Returns the JSON string representation of list_dictionaries.
-
-        Args:
-            list_dictionaries (list): A list of dictionaries.
-
-        Returns:
-            str: JSON string representation of list_dictionaries.
-        """
+        """ Returns The Json String Representation of List_Dictionaries"""
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
-        else:
+        if type(list_dictionaries) is list:
+            for dictionaries in list_dictionaries:
+                if type(dictionaries) is not dict:
+                    return "[]"
             return json.dumps(list_dictionaries)
+        else:
+            return "[]"
