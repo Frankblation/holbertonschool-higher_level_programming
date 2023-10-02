@@ -99,6 +99,7 @@ class Rectangle(Base):
             print(' ' * self.__x + '#' * self.__width)
 
     def update(self, *args, **kwargs):
+        """args and kwargs bby"""
         if args:
             attributes = ['id', 'width', 'height', 'x', 'y']
             for i in range(min(len(args), len(attributes))):
