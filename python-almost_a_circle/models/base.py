@@ -38,7 +38,32 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        """Json string to dictionary"""
+        """Json str to dic"""
         if json_string is None or len(json_string) == 0:
             return []
         return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """Returns an instance with all attributes already set."""
+        if cls.__name__ == "Rectangle":
+            dummy = cls(1, 1)
+        elif cls.__name__ == "Square":
+            dummy = cls(1)
+
+        dummy.update(**dictionary)
+        return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """Loads objects from a JSON file and returns a list of instances."""
+        try:
+            with open("{}.json".format(cls.__name__), "r", encoding="utf-8") as f:
+                json_string = f.read()
+                dict_list = cls.from_json_string(json_string)
+                instance_list = []
+                for obj_dict in dict_list:
+                    instance_list.append(cls.create(**obj_dict))
+                return instance_list
+        except FileNotFoundError:
+            return []
