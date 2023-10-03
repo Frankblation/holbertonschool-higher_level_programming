@@ -30,14 +30,8 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """
-        Writes the JSON string,list_objs to a file in JSON format.
-        """
+        '''Saves object to file.'''
         if list_objs is not None:
             list_objs = [o.to_dictionary() for o in list_objs]
-            if not isinstance(object, cls):
-                raise
-        TypeError(f"objects in list_objs must be instances of {cls.__name__}")
-        list_objs.append(object.to_dictionary())
-        with open("{}.json".format(cls.__name__), "w", encoding="utf-8") as file:
-            file.write(cls.to_json_string(list_objs))
+        with open("{}.json".format(cls.__name__), "w", encoding="utf-8") as f:
+            f.write(cls.to_json_string(list_objs))
