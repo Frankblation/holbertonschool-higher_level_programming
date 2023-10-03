@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-'''Module for Square unit tests.'''
+"""Module for Square unit tests."""
 import unittest
 from models.base import Base
 from models.square import Square
@@ -9,15 +9,15 @@ import io
 
 
 class TestSquare(unittest.TestCase):
-    '''Tests the Base class.'''
+    """Tests the Base class."""
 
     def setUp(self):
-        '''Imports module, instantiates class'''
+        """Imports module, instantiates class"""
         Base._Base__nb_objects = 0
 
     def tearDown(self):
-        '''Cleans up after each test_method.'''
+        """Cleans up after each test_method."""
         pass
 
-    def list_squares_input(self):
-        r1 = Rectangle(10, 7, 2, 8)
+    if __name__ == '__main__':
+        unittest.main()
