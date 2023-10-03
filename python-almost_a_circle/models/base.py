@@ -58,7 +58,8 @@ class Base:
     def load_from_file(cls):
         """Loads objects from a JSON file and returns a list of instances."""
         try:
-            with open("{}.json".format(cls.__name__), "r", encoding="utf-8") as f:
+            with open("{}.json".format
+                      (cls.__name__), "r", encoding="utf-8") as f:
                 json_string = f.read()
                 dict_list = cls.from_json_string(json_string)
                 instance_list = []
