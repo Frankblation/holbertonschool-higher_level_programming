@@ -18,3 +18,6 @@ class TestSquare(unittest.TestCase):
     def tearDown(self):
         '''Cleans up after each test_method.'''
         pass
+
+    def list_squares_input(self):
+        r1 = Rectangle(10, 7, 2, 8)
