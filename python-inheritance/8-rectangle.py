@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Rectangele that inherates base g"""
 
+
 class BaseGeometry:
     """class basegeometry"""
     def area(self):
