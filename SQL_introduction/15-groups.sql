@@ -1,2 +1,2 @@
 -- script that lists the number of records with the same score in the table second_table of the database hbtn_0c_0 in MySQL server.
-SELECT score, COUNT(score) AS NUMBER GROUP BY score, ORDER BY score DESC;
+SELECT score, COUNT(*) AS NUMBER FROM `second_table` GROUP BY score, ORDER BY score DESC;
