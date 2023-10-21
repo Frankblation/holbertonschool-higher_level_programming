@@ -2,4 +2,4 @@
 
 UPDATE second_table
 SET Bob = 10
-WHERE score;
+WHERE `score` = 10;
