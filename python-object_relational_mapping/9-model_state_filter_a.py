@@ -12,7 +12,7 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-h
+
     # Retrieve and print the first State object where the name contains 'a'
     first_state = session.query(State).filter(State.name.like('%a%')).first()
     if first_state:
