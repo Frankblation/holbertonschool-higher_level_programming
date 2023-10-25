@@ -18,10 +18,10 @@ def filters_names_safe():
         cur = db.cursor()
 
         cur.execute("SELECT * FROM states WHERE BINARY name='{:s}'\
-                    ORDER BY id ASC".format(sys.argv[4]))
+                    ORDER BY states.id ASC")
         rows = cur.fetchall()
-        for id in rows:
-            print(id)
+        for i in rows:
+            print(i)
 
         cur.close()
         db.close()
