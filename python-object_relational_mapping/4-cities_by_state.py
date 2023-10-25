@@ -4,7 +4,7 @@ import MySQLdb
 import sys
 
 
-def filters_names_safe():
+def filters_names_safe(username, password, database_name):
     """
     Only lists with states that matches name argument
     """
