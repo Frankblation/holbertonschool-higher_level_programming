@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 """
 Displays all values in the states table of hbtn_0e_0_usa where name matches
 the argument.
@@ -8,13 +9,13 @@ import MySQLdb
 import sys
 
 
-def display_states(username, password, database_name, state_name):
-    """
-    Displays states from the hbtn_0e_0_usa database where
-     name matches the provided argument.
-    """
+import MySQLdb
+import sys
+
+
+def display_states(username, password, database_name, state_searched):
     db = MySQLdb.connect(
-        host='localhost',
+        host="localhost",
         port=3306,
         user=username,
         passwd=password,
@@ -22,16 +23,13 @@ def display_states(username, password, database_name, state_name):
     )
 
     cursor = db.cursor()
-
-    query =("""
-    SELECT *
-    FROM states
-    WHERE name = '{}'
-    ORDER BY
-    id ASC
-    """).format(state_name)
-
-    cursor.execute(query)
+    # Execute SQL Query
+    cursor.execute("""
+        SELECT *
+        FROM states
+        WHERE name LIKE BINARY '{}'
+        ORDER BY states.id
+    """.format(state_searched))
 
     results = cursor.fetchall()
 
@@ -46,5 +44,5 @@ if __name__ == "__main__":
     username = sys.argv[1]
     password = sys.argv[2]
     database_name = sys.argv[3]
-    state_name = sys.argv[4]
-    display_states(username, password, database_name, state_name)
+    state_searched = sys.argv[4]
+    display_states(username, password, database_name, state_searched)
