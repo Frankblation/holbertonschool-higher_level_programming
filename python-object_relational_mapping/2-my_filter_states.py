@@ -23,8 +23,13 @@ def display_states(username, password, database_name, state_name):
 
     cursor = db.cursor()
 
-    query = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".\
-        format(state_name)
+    query =("""
+    SELECT *
+    FROM states
+    WHERE name = '{}'
+    ORDER BY
+    id ASC
+    """).format(state_name)
 
     cursor.execute(query)
 
@@ -42,5 +47,4 @@ if __name__ == "__main__":
     password = sys.argv[2]
     database_name = sys.argv[3]
     state_name = sys.argv[4]
-
     display_states(username, password, database_name, state_name)
