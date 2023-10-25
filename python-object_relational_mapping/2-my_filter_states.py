@@ -9,10 +9,6 @@ import MySQLdb
 import sys
 
 
-import MySQLdb
-import sys
-
-
 def display_states(username, password, database_name, state_searched):
     db = MySQLdb.connect(
         host="localhost",
