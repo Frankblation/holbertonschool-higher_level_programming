@@ -7,24 +7,28 @@ the argument (safe from MySQL injection).
 import MySQLdb
 import sys
 
-if __name__ == "__main__":
-    username = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
-    search_term = sys.argv[4]
-./h
 
-    db = MySQLdb.connect(host="localhost", port=3306, user=username,
-                         passwd=password, db=database)
-    cursor = db.cursor()
+def filters_names():
+    """
+    Only lists with states that matches name argument
+    """
+    db = MySQLdb.connect(host="localhost",
+                         port=3306,
+                         user=sys.argv[1],
+                         passwd=sys.argv[2],
+                         db=sys.argv[3])
 
-    query = "SELECT * FROM states WHERE name LIKE %s ORDER BY id ASC"
-    search_term_with_percent = f"%{search_term}%"
+    cur = db.cursor()
 
-    cursor.execute(query, (search_term_with_percent,))
-    results = cursor.fetchall()
+    cur.execute("SELECT * FROM states WHERE BINARY name='{:s}'\
+                ORDER BY id ASC".format(sys.argv[4]))
+    rows = cur.fetchall()
+    for id in rows:
+        print(id)
 
-    for row in results:
-        print(row)
-
+    cur.close()
     db.close()
+
+
+if __name__ == "__main__":
+    filters_names()
