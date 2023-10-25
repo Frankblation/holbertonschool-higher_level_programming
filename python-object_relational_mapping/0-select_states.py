@@ -18,7 +18,7 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     # Execute SQL query to retrieve id and name columns from the states table and sort by id
-    cursor.execute("SELECT id, name FROM states ORDER BY id ASC")
+    cursor.execute("SELECT * FROM states ORDER BY id ASC")
 
     # Fetch all rows and display them as in the example
     results = cursor.fetchall()
