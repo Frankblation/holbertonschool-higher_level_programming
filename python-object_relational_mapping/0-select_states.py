@@ -6,22 +6,28 @@ import sys
 
 
 if __name__ == "__main__":
-    # Get MySQL credentials from command line arguments
     username = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]
 
-    # Connect to MySQL server
     db = MySQLdb.connect(host="localhost", port=3306, user=username, passwd=password, db=database)
 
-    # Create a cursor object using cursor() method
     cursor = db.cursor()
 
-    # Execute SQL query to retrieve id and name columns from the states table and sort by id
+
     cursor.execute("SELECT * FROM states ORDER BY id ASC")
 
-    # Fetch all rows and display them as in the example
     results = cursor.fetchall()
     for row in results:
         print(row)
+    cursor.close()
     db.close()
+
+
+    if __name__ == "__main__":
+    username = sys.argv[1]
+    password = sys.argv[2]
+    database_name = sys.argv[3]
+    host = 'localhost'
+    port = 3306
+    list_states(username, password, database_name, host, port)
