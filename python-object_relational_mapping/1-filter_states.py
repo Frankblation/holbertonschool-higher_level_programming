@@ -7,36 +7,31 @@ import MySQLdb
 import sys
 
 
-def list_states(username, password, database):
-    """
-    Lists states with a name starting with 'N' from the specified database.
-    """
+if __name__ == "__main__":
+    # Get MySQL credentials and search term from command line arguments
+    username = sys.argv[1]
+    password = sys.argv[2]
+    database = sys.argv[3]
+    search_term = sys.argv[4]
+
     # Connect to MySQL server
-    db = MySQLdb.connect(host="localhost", port=3306, user=username,\
-        passwd=password, db=database)
+    db = MySQLdb.connect(host="localhost", port=3306, user=username,
+                         passwd=password, db=database)
 
     # Create a cursor object using cursor() method
     cursor = db.cursor()
 
-    # Execute SQL query to retrieve states starting with 'N'
-    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
+    # Use format to create the SQL query with user input
+    query = "SELECT * FROM states WHERE name LIKE '{}' ORDER BY id ASC".format
+    (search_term)
 
-    # Fetch all rows and return them
+    # Execute SQL query
+    cursor.execute(query)
+
+    # Fetch all rows and display them as in the example
     results = cursor.fetchall()
+    for row in results:
+        print(row)
 
     # Disconnect from the server
     db.close()
-
-    return results
-
-
-if __name__ == "__main__":
-    # Get MySQL credentials from command line arguments
-    username = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
-
-    # Get and print states using the function
-    states = list_states(username, password, database)
-    for state in states:
-        print(state)
