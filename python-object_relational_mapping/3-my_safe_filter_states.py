@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-Displays all values in the states table of hbtn_0e_0_usa where name matches
-the argument (safe from MySQL injection).
+Displays all values in the states table safe from MySQL injection.
 """
 
 import MySQLdb
