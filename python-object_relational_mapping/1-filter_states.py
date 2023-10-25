@@ -1,22 +1,42 @@
 #!/usr/bin/python3
-"""A script lists all State objects from the database hbtn_0e_6_usa"""
+"""
+Lists states with a name starting with 'N' from the hbtn_0e_0_usa database.
+"""
 
+import MySQLdb
 import sys
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
-from model_state import Base, State
+
+
+def list_states(username, password, database):
+    """
+    Lists states with a name starting with 'N' from the specified database.
+    """
+    # Connect to MySQL server
+    db = MySQLdb.connect(host="localhost", port=3306, user=username,\
+        passwd=password, db=database)
+
+    # Create a cursor object using cursor() method
+    cursor = db.cursor()
+
+    # Execute SQL query to retrieve states starting with 'N'
+    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
+
+    # Fetch all rows and return them
+    results = cursor.fetchall()
+
+    # Disconnect from the server
+    db.close()
+
+    return results
+
 
 if __name__ == "__main__":
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
-        sys.argv[1], sys.argv[2], sys.argv[3]), pool_pre_ping=True)
-    Base.metadata.create_all(engine)
-    Session = sessionmaker(bind=engine)
-    session = Session()
-    flag = 0
-    for state in session.query(State).order_by(State.id):
-        if state.name == sys.argv[4]:
-            print("{}".format(state.id))
-            flag = 1
-    if flag == 0:
-        print("Not found")
-    session.close()
+    # Get MySQL credentials from command line arguments
+    username = sys.argv[1]
+    password = sys.argv[2]
+    database = sys.argv[3]
+
+    # Get and print states using the function
+    states = list_states(username, password, database)
+    for state in states:
+        print(state)
