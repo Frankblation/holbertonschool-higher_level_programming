@@ -1,4 +1,4 @@
-#!/opt/homebrew/bin/node
+#!/usr/bin/node
 const numberOfArguments = process.argv.length - 2;
 
 if (numberOfArguments === 0) {
