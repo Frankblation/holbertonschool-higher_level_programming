@@ -2,7 +2,7 @@
 const request = require('request');
 
 // Function to get the number of movies where "Wedge Antilles" is present
-function getMoviesWithWedgeAntilles (apiUrl) {
+function getMoviesWithWedgeAntilles(apiUrl) {
   request(apiUrl, (error, response, body) => {
     if (error) {
       console.error('Error:', error);
@@ -11,11 +11,15 @@ function getMoviesWithWedgeAntilles (apiUrl) {
     } else {
       try {
         const filmsData = JSON.parse(body).results;
-        const moviesWithWedgeAntilles = filmsData.filter((film) =>
-          film.characters.includes('https://swapi.dev/api/people/18/')
-        );
+        let count = 0;
 
-        console.log(`${moviesWithWedgeAntilles.length}`);
+        filmsData.forEach((film) => {
+          if (film.characters.some((character) => character.includes('/18/'))) {
+            count++;
+          }
+        });
+
+        console.log(count);
       } catch (parseError) {
         console.error('Error parsing JSON:', parseError);
       }
