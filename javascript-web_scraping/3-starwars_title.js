@@ -22,14 +22,12 @@ function getStarWarsMovieTitle (movieID) {
   });
 }
 
-// Get movie ID from command line arguments
 const args = process.argv.slice(2);
 const movieID = parseInt(args[0]);
 
-// Check if the provided argument is a valid integer
 if (isNaN(movieID) || movieID <= 0) {
   console.error('Please provide a valid positive integer as the movie ID.');
 } else {
-  // Fetch and print the title of the Star Wars movie
+
   getStarWarsMovieTitle(movieID);
 }
