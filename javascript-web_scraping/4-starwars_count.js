@@ -2,7 +2,7 @@
 const request = require('request');
 
 // Function to get the number of movies where "Wedge Antilles" is present
-function getMoviesWithWedgeAntilles(apiUrl) {
+function getMoviesWithWedgeAntilles (apiUrl) {
   request(apiUrl, (error, response, body) => {
     if (error) {
       console.error('Error:', error);
