@@ -14,7 +14,7 @@ function getStarWarsMovieTitle (movieID) {
     } else {
       try {
         const movieData = JSON.parse(body);
-        console.log(`Title of Star Wars Episode ${movieData.episode_id}: ${movieData.title}`);
+        console.log(`Title of Star Wars Episode ${movieData.title}`);
       } catch (parseError) {
         console.error('Error parsing JSON:', parseError);
       }
